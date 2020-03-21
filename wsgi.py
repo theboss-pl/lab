@@ -1,4 +1,5 @@
 from flask import Flask
+from datetime import datetime
 import psycopg2
 
 application = Flask(__name__)
@@ -15,7 +16,7 @@ def db_connect:
 
 @application.route("/")
 def hello():
-    return db_connect()
+    return "Hello! Now it's " + datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 if __name__ == "__main__":
     application.run()
