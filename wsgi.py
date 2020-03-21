@@ -11,7 +11,7 @@ def db_connect:
     row = cursor.fetchone()
     cursor.close()
     conn.close()
-    return "Zażółć gęślą jaźń! \nVer=" + str(ver)
+    return "Hello ver=" + str(ver)
 
 @application.route("/")
 def hello():
