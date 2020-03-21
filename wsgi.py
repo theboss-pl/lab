@@ -1,18 +1,18 @@
 from flask import Flask
 from datetime import datetime
-import psycopg2
+#import psycopg2
 
 application = Flask(__name__)
 
-def db_connect:
-    conn = psycopg2.connect(host="10.129.13.10", user="test", password="test123", dbname="sampledb")
-    ver = conn.server_version
-    cursor = conn.cursor()
-    cursor.execute('SELECT VERSION()')
-    row = cursor.fetchone()
-    cursor.close()
-    conn.close()
-    return "Hello ver=" + str(ver)
+#def db_connect:
+#    conn = psycopg2.connect(host="10.129.13.10", user="test", password="test123", dbname="sampledb")
+#    ver = conn.server_version
+#    cursor = conn.cursor()
+#    cursor.execute('SELECT VERSION()')
+#    row = cursor.fetchone()
+#    cursor.close()
+#    conn.close()
+#    return "Hello ver=" + str(ver)
 
 @application.route("/")
 def hello():
