@@ -25,14 +25,14 @@ def db_connect_2():
     return str(ver)
 
 def db_connect_3():
-    conn = psycopg2.connect(host="ip-10-0-146-246.ec2.internal", user="test", password="test123", dbname="sampledb")
+    conn = psycopg2.connect(host="172.30.130.175", user="test", password="test123", dbname="sampledb")
     ver = conn.server_version
-#    cursor = conn.cursor()
-#    cursor.execute('SELECT VERSION()')
-#    row = cursor.fetchone()
-#    cursor.close()
+    cursor = conn.cursor()
+    cursor.execute('SELECT VERSION()')
+    row = cursor.fetchone()
+    cursor.close()
     conn.close()
-    return str(ver)
+    return row
 
 @application.route("/")
 def hello():
