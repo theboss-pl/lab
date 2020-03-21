@@ -32,7 +32,7 @@ def db_connect_3():
     row = cursor.fetchone()
     cursor.close()
     conn.close()
-    return row
+    return str(row)
 
 @application.route("/")
 def hello():
