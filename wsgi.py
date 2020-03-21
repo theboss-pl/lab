@@ -24,7 +24,7 @@ def db_connect_2():
     conn.close()
     return str(ver)
 
-def db_connect_url():
+def db_connect_3():
     conn = psycopg2.connect(host="ip-10-0-146-246.ec2.internal", user="test", password="test123", dbname="sampledb")
     ver = conn.server_version
 #    cursor = conn.cursor()
@@ -43,12 +43,12 @@ def version():
     return db_connect()
 
 @application.route("/version2")
-def version():
+def version2():
     return db_connect_2()
 
-@application.route("/ver")
-def version():
-    return db_connect_url()
+@application.route("/version3")
+def version3():
+    return db_connect_3()
 
 if __name__ == "__main__":
     application.run()
