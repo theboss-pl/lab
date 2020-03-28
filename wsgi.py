@@ -36,7 +36,8 @@ def db_connect_3():
 
 @application.route("/")
 def hello():
-    return "Hey! Now it's " + datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    #return "Hey! Now it's " + datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return "Hey! Now it's " + datetime.utcnow().isoformat() + "Z"
 
 @application.route("/version")
 def version():
